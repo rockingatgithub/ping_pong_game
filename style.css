@@ -1,0 +1,35 @@
+#game-window {
+    position: relative;
+    height: 600px;
+    width: 800px;
+    border: 1px solid black;
+}
+
+.rod {
+    border: 1px solid black;
+    height: 10px;
+    width: 110px;
+    position: absolute;
+    border-radius: 5px;
+    background: slategray;
+}
+
+#bar1{
+    left: 345px;
+}
+
+#bar2 {
+    top: 590px;
+    left: 345px;
+}
+
+#ball {
+    border: 1px solid black;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    position: absolute;
+    top: 10px;
+    left: 392px;
+    background: tomato;
+}
