@@ -1,3 +1,10 @@
+//display high score at start of game...
+var alert_box=document.getElementById("alert-box");
+alert_box.innerHTML= "Press Enter to start game\n "+"Highscore: "+ localStorage.getItem("highscore");
+//variables for count and palyers...
+var count1=0;
+var count2=0;
+var winning_player="";
 //we will define the rod first...
 var rods= document.querySelectorAll(".rod");
 var rod1= document.getElementById("bar1");
@@ -128,14 +135,32 @@ function moveballleftdown2()
            if(ballleftend>rodleftend && ballleftend<rodrightend)
            {
                moveballrightup();
+               count2++;
            }
            else
            if(ballrightend>rodleftend && ballrightend<rodrightend)
            {
                moveballrightup();
+               count2++;
            }
            else{
-               window.alert("game over");
+                if(count1>count2)
+                {
+                    let svalue=count1+"";
+                    if(localStorage.length==0 || localStorage.getItem("highscore") < svalue)
+                    {
+                        localStorage.setItem("highscore", svalue);
+                    }
+                    window.alert("Player A wins!\n"+"score: "+count1+"\ngame over");
+                }
+                else{
+                    let svalue=count2+"";
+                    if(localStorage.length==0 || localStorage.getItem("highscore") < svalue)
+                    {
+                        localStorage.setItem("highscore", svalue);
+                    }
+                    window.alert("Player B wins!\n"+"score: "+count2+"\ngame over");
+                }
            }
         }
     }, 5);
@@ -180,14 +205,32 @@ function moveballrightup2()
            if(ballleftend>rodleftend && ballleftend<rodrightend)
            {
                moveballleftdown();
+               count1++;
            }
            else
            if(ballrightend>rodleftend && ballrightend<rodrightend)
            {
                moveballleftdown();
+               count1++;
            }
            else{
-               window.alert("game over");
+                if(count1>count2)
+                {
+                    let svalue=count1+"";
+                    if(localStorage.length==0 || localStorage.getItem("highscore") < svalue)
+                    {
+                        localStorage.setItem("highscore", svalue);
+                    }
+                    window.alert("Player A wins!\n"+"score: "+count1+"\ngame over");
+                }
+                else{
+                    let svalue=count2+"";
+                    if(localStorage.length==0 || localStorage.getItem("highscore") < svalue)
+                    {
+                        localStorage.setItem("highscore", svalue);
+                    }
+                    window.alert("Player B wins!\n"+"score: "+count2+"\ngame over");
+                }
            }
         }
     }, 5);
